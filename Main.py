@@ -650,3 +650,23 @@ from distutils import version
 #   Set = {} unordered and immutable, but Add/Remove OK. NO duplicates
 #   Tuple = () ordered and unchangeable. Duplicates OK. FASTER
 
+#fruits = ["apple", "orange", "banana", "coconut"] # -------- This is a list --------
+# print(dir(fruits))
+# print(help(fruits))
+# print(len(fruits))
+# print("pineapple" in fruits)
+
+#fruits[0] = "pineapple"
+# print(fruits[0])
+#for fruit in fruits:
+#    print(fruit)
+#fruits.append("pineapple") # -------- use the append method to add an element to the end of a list --------
+#fruits.remove("apple") # -------- use the remove method to remove an element from a list --------
+#fruits.insert(0, "pineapple") # -------- use the insert method to add an element at a given index --------
+#fruits.sort() # -------- use the sort method to sort elements alphabetically --------
+#fruits.reverse() # -------- use the reverse method to reverse the list based off of the order in which you placed them, not alphabetically --------
+#fruits.clear() # -------- use this method to clear a list --------
+#print(fruits.index("apple")) # -------- use the index method to show the index value of the element within the list --------
+#print(fruits.count("banana")) # -------- use the count method to show how many times the element is shown within the list --------
+#print(fruits)
+
