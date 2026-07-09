@@ -670,3 +670,82 @@ from distutils import version
 #print(fruits.count("banana")) # -------- use the count method to show how many times the element is shown within the list --------
 #print(fruits)
 
+# -------- Sets --------
+
+#fruits = {"apple", "orange", "banana", "coconut"} # -------- This is a set --------
+# print(dir(fruits)) # -------- use the dir function to show all the different attributes and methods --------
+# print(help(fruits)) # -------- use the help function to show in depth descriptions of all of the methods --------
+# print(len(fruits)) # -------- use this to show the length --------
+# print("pineapple" in fruits) # -------- use the in operator to find if a value is found within --------
+# print(fruits[0]) # -------- not able to use indexing on a set because a set is unordered --------
+#fruits.add("pineapple") # -------- use the add function to add an element --------
+#fruits.remove("banana") # -------- use the remove function to remove an element --------
+#fruits.pop() # -------- use the pop function to remove whichever element is first but it will be random since sets are unordered  --------
+#fruits.clear() # -------- use the clear function to clear the set --------
+#print(fruits)
+
+# -------- Tuples --------
+
+#fruits = ("apple", "orange", "banana", "coconut", "coconut")
+# print(dir(fruits)) # -------- use the dir function to show all the different attributes and methods --------
+# print(help(fruits)) # -------- use the help function to show in depth descriptions of all of the methods --------
+# print(len(fruits)) # -------- use this to show the length --------
+
+# print(fruits.index("apple")) # -------- use index method to show the place of the element within the tuple --------
+# print(fruits.count("apple")) # -------- use count method to show how many times the element is within the tuple --------
+#for fruit in fruits:
+#    print(fruit)
+
+# -------- Exercise: Shopping cart program. ( lists, sets, tuples) --------
+
+#foods = []
+#prices = []
+#total = 0
+
+#while True:
+#    food = input("Enter a food to buy (q to quit): ")
+#    if food.lower() == "q": # -------- use .lower to make it so the user can input both uppercase and lowercase to quit --------
+#        break
+#    else:
+#        price = float(input(f"Enter the price of a {food}: $"))
+#        foods.append(food)
+#        prices.append(price)
+
+#print("----- YOUR CART -----")
+
+#for food in foods:
+    #print(food)
+#    print(food, end=" ") # -------- use end to make the list horizontal --------
+
+#for price in prices:
+#    total = total + price
+
+#print() # -------- this empty print statement allows spacing/new line to cleanly display the items and then the total below the items --------
+#print(f"Your total is: ${total}")
+
+# -------- 2D Lists --------
+
+#fruits = ["apple", "orange", "banana", "coconut"] # -------- This is a 1D list --------
+#vegetables = ["celery", "carrots", "potatoes"] # -------- This is a 1D list --------
+#meats = ["chicken", "fish", "turkey"] # -------- This is a 1D list --------
+
+# -------- To create a 2D list you must create a new 1D list and place the 1D list elements inside --------
+
+#groceries = [fruits, vegetables, meats] # -------- This is a 2D list --------
+
+#print(groceries) # -------- This will print all of the elements within the lists --------
+#print(groceries[0][3]) # -------- This will print specific items. the indexing acts like rows and columns. ie; 0 is fruits, 3 is coconut so it prints "coconut" --------
+
+# -------- 2D lists can also be formatted like this --------
+#groceries = [["apple", "orange", "banana", "coconut"],
+#             ["celery", "carrots", "potatoes"],
+#             ["chicken", "fish", "turkey"]]
+#print(groceries[0][0])
+
+# -------- To iterate over the elements of a 2D list you can use nested loops --------
+
+#for collection in groceries:
+#    for food in collection:
+#        print(food, end=" ")
+#    print()
+
