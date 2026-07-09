@@ -749,3 +749,470 @@ from distutils import version
 #        print(food, end=" ")
 #    print()
 
+# -------- Exercise: 2D Key pad --------
+
+#num_pad = ((1,2,3),
+#           (4,5,6),
+#           (7,8,9),
+#           ("*",0,"#"))
+
+#for row in num_pad:
+#    for num in row:
+#        print(num, end=" ")
+#    print()
+
+# -------- Python quiz game --------
+
+#questions = ("How many elements are in the periodic table?: ",
+#             "Which animal lays the largest eggs?: ",
+#             "What is the most abundant gas in Earth's atmosphere?: ",
+#             "How many bones are in the human body?: ",
+#             "Which planet in the solar system is the hottest?: ")
+
+#options = (("A. 116 ", "B. 117", "C. 118", "D. 119"),
+#           ("A. Whale", "B. Crocodile", "C. Elephant", "D. Ostrich"),
+#           ("A. Nitrogen", "B. Oxygen", "C. Carbon-Dioxide", "D. Hydrogen"),
+#           ("A. 206", "B. 207", "C. 208", "D. 209"),
+#           ("A. Mercury", "B. Venus", "C. Earth", "D. Mars"))
+
+#answers = ("C", "D", "A", "A", "B")
+#guesses = []
+#score = 0
+#question_num = 0
+
+#for question in questions:
+#    print("----------------------")
+#    print(question)
+#    for option in options [question_num]:
+#        print(option)
+
+#    guess = input("Enter (A, B, C, or D): ").upper()
+#    guesses.append(guess)
+#    if guess == answers[question_num]:
+#        score += 1
+#        print("Correct!")
+#    else:
+#        print("Incorrect!")
+#        print(f"{answers[question_num]} is the correct answer")
+#    question_num += 1
+
+#print("----------------------")
+#print("        RESULTS       ")
+#print("----------------------")
+
+#print("answers: ", end="")
+#for answer in answers:
+#    print(answer, end=" ")
+#print()
+
+#print("guesses: ", end="")
+#for guess in guesses:
+#    print(guess, end=" ")
+#print()
+
+#score = int(score / len(questions) * 100)
+#print(f"Your score is: {score}%")
+
+# -------- Dictionaries --------
+# dictionary = a collection of {key:value} pairs
+#              ordered and changeable. No duplicates
+
+#capitals = {"USA": "Washington D.C.",
+#            "India": "New Delhi",
+#            "China": "Beijing",
+#            "Russia": "Moscow"}
+
+#print(dir(capitals))
+#print(help(capitals))
+
+# -------- Methods: --------
+
+# -------- Get method --------
+
+#print(capitals.get("Japan")) # -------- To get one of the values from the dictionary you would use .get to get the key --------
+
+#if capitals.get("Russia"):
+#    print("That capital exists")
+#else:
+#    print("That capital does not exist")
+
+# -------- Update method --------
+
+#capitals.update({"Germany": "Berlin"}) # -------- using the .update method you can insert a new key value pair or update an existing key value pair --------
+#capitals.update({"USA": "Detroit"})
+
+#print(capitals)
+
+# -------- Pop method --------
+
+#capitals.pop("China") # -------- To remove a key value pair you can use .pop --------
+#print(capitals)
+
+# -------- Pop item method --------
+
+#capitals.popitem() # -------- To remove the latest key value pair use .popitem --------
+#print(capitals)
+
+# -------- Clear method --------
+
+#capitals.clear() # To clear the dictionary completely use .clear --------
+#print(capitals)
+
+# -------- Keys method ---------
+
+#keys = capitals.keys() # -------- To get all the keys within the dictionary but not the values use the .keys method --------
+#print(keys)
+
+#for key in capitals.keys(): # -------- The keys method can be used in a for loop to iterate over the keys in the dictionary --------
+#    print(key)
+
+# -------- Values method ---------
+
+#values = capitals.values()# -------- To get all the values within the dictionary use the .values method --------
+#print(values)
+
+#for value in capitals.values():# -------- To iterate and print over every value within your dictionary use a for loop --------
+#    print(value)
+
+# -------- Items method --------
+# -------- .items returns a dictionary object which resembles a 2D list of tuples
+#for key, value in capitals.items(): # -------- This iterates over every key value pair within the dictionary --------
+#    print(f"{key}: {value}")
+
+# -------- Dictionary Exercise: Concession stand program --------
+
+#menu = {"pizza": 3.00, # -------- This is your library --------
+#        "nachos": 4.50,
+#        "popcorn": 6.00,
+#        "fries": 2.50,
+#        "chips": 1.00,
+#        "pretzel": 3.50,
+#        "soda": 3.00,
+#        "lemonade": 4.25}
+#cart = [] # -------- This is a list collection --------
+#total = 0
+
+#print("-------- MENU --------")
+#for key, value in menu.items():
+#    print(f"{key:10}: ${value:.2f}")
+#print("----------------------")
+
+#while True:
+#    food = input("Select an item (q to quit): ").lower()
+#    if food == "q":
+#        break
+#    elif menu.get(food) is not None:
+#        cart.append(food)
+
+#print("----------YOUR ORDER ------------")
+#for food in cart:
+#    total += menu.get(food)
+#    print(food, end=" ")
+
+#print()
+#print(f"Total cost: ${total:.2f}")
+
+# -------- Exercise: Number guessing program --------
+
+#import random
+
+#low = 1
+#high = 100
+#options = ("rock", "paper", "scissors")
+#cards = ["2","3","4","5","6","7","8","9","10", "J", "Q", "K", "A"]
+
+#number = random.randint(1,100) # -------- This will choose a random integer from 1-100 --------
+#number =random.random() #  -------- This will choose a random floating point number from 0-1 --------
+#option = random.choice(options) # -------- This will choose a random option from the list of preset choices --------
+#random.shuffle(cards) # -------- This will shuffle the order of the items within the set --------
+
+#print(number)
+#print(option)
+#print(cards)
+
+# -------- Exercise: Number guessing game --------
+
+#import random
+
+#lowest_num = 1
+#highest_num = 100
+#answer = random.randint(lowest_num, highest_num)
+#guesses = 0
+#is_running = True
+
+#print("Python Number Guessing Game")
+#print(f"Select a number between {lowest_num} and {highest_num}")
+
+#while is_running:
+
+#    guess = input("Enter your guess: ")
+
+#    if guess.isdigit():
+#        guess = int(guess)
+#        guesses += 1
+
+#        if guess < lowest_num or guess > highest_num:
+#            print(f"That number is out of range")
+#            print(f"Please select a number between {lowest_num} and {highest_num}")
+#        elif guess < answer:
+#            print("Too low! Try again!")
+#        elif guess > answer:
+#            print("Too high! Try again!")
+#        else:
+#            print(f"CORRECT! The answer was {answer}")
+#            print(f"Number of guesses: {guesses}")
+#            is_running = False
+#    else:
+#        print("Invalid guess")
+#        print(f"Please select a number between {lowest_num} and {highest_num}")
+
+# -------- Exercise: Rock, paper, scissors game --------
+
+#import random
+
+#options = ("rock", "paper", "scissors")
+#running = True
+
+#while running:
+
+#    player = None
+#    computer = random.choice(options)
+
+#    while player not in options:
+#        player = input("Enter a choice (rock, paper, scissors): ")
+
+#    print(f"Player: {player}")
+#    print(f"Computer: {computer}")
+
+#    if player == computer:
+#        print("It's a tie!")
+#    elif player == "rock" and computer == "scissors":
+#        print("You win!")
+#    elif player == "paper" and computer == "rock":
+#        print("You win!")
+#    elif player == "scissors" and computer == "paper":
+#        print("You win!")
+#    else:
+#        print("You lose!")
+
+#    play_again = input("Play again? (y/n): ").lower()
+#    if not play_again == "y":
+#        running = False
+
+#    if not input("Play again? (y/n): ").lower() == "y": # -------- You can escape the while loop without using the variable play_again. This just makes for cleaner code with fewer variables --------
+#        running = False
+
+#print("Thanks for playing!")
+
+# -------- Exercise: Dice roller program --------
+
+#import random
+
+#print("\u25CF \u250C \u2500 \u2510 \u2502 \u2514 \u2518")
+# ● ┌ ─ ┐ │ └ ┘
+
+#"┌---------┐"
+#"│         │"
+#"│         │"
+#"│         │"
+#"└---------┘"
+
+#dice_art = {
+#    1:("┌---------┐",
+#       "│         │",
+#       "│    ●    │",
+#       "│         │",
+#       "└---------┘"),
+#    2:("┌---------┐",
+#       "│  ●      │",
+#       "│         │",
+#       "│      ●  │",
+#       "└---------┘"),
+#    3:("┌---------┐",
+#       "│  ●      │",
+#       "│    ●    │",
+#       "│      ●  │",
+#       "└---------┘"),
+#    4:("┌---------┐",
+#       "│ ●     ● │",
+#       "│         │",
+#       "│ ●     ● │",
+#       "└---------┘"),
+#    5:("┌---------┐",
+#       "│ ●     ● │",
+#       "│    ●    │",
+#       "│ ●     ● │",
+#       "└---------┘"),
+#    6:("┌---------┐",
+#       "│ ●     ● │",
+#       "│ ●     ● │",
+#       "│ ●     ● │",
+#       "└---------┘")
+
+#}
+
+#dice = []
+#total = 0
+#num_of_dice = int(input("How many dice?: "))
+
+#for die in range(num_of_dice):
+#    dice.append(random.randint(1,6))
+
+#for die in range(num_of_dice):
+#    for line in dice_art.get(dice[die]):
+#        print(line)
+
+#for line in range(5):# -------- This nested loop will make it so the dice art shows horizontally --------
+#    for die in dice:
+#        print(dice_art.get(die)[line], end="")
+#    print()
+
+
+#for die in dice:
+#    total += die
+#print(f"total: {total}")
+
+# -------- Functions --------
+# function = A block of reusable code
+#            place () after the function name to invoke it
+
+#def happy_birthday(): # -------- To define a function use def then type the function name and add parenthesis and a colon --------
+#    print("Happy birthday to you!") # -------- Be sure to indent any code that belongs to the function --------
+#    print("You are old!") # -------- Be sure to indent any code that belongs to the function --------
+#    print("Happy birthday to you!") # -------- Be sure to indent any code that belongs to the function --------
+#    print() # -------- Be sure to indent any code that belongs to the function --------
+
+#happy_birthday() # -------- To invoke the function type the function name and add a set of parenthesis. When you invoke the function you will execute the code once --------
+#happy_birthday() # -------- If you need to invoke the function more than once, repeat the function.
+#happy_birthday() # -------- If you need to invoke the function more than once, repeat the function.
+
+# -------- With functions you are able to send a data directly to a function. using arguments you can send a values or variables directly to a function
+
+#def happy_birthday(name): # -------- Notice how the parameter "name" matches below --------
+#    print(f"Happy birthday to {name}!")
+#    print("You are old!")
+#    print(f"Happy birthday to {name}!")
+#    print()
+
+#happy_birthday("Emile") # -------- Place any data within the set of parenthesis. Any data you send a function are known as arguments, but you need a matching set of parameters that are in order --------
+
+# -------- When you invoke a function you can send more than one argument --------
+
+#def happy_birthday(name, age): # -------- The position of the parameters does matter and the parameters must match --------
+#    print(f"Happy birthday to {name}!")
+#    print(f"You are {age} years old!")
+#    print(f"Happy birthday to {name}!")
+#    print()
+
+#happy_birthday("Emile", 20) # -------- The position of the arguments does matter --------
+#happy_birthday("Steve", 30)
+#happy_birthday("Joe", 40)
+
+#def display_invoice(username, amount, due_date):
+#    print(f"Hello {username}")
+#    print(f"Your bill of ${amount:.2f} is due: {due_date}")
+
+#display_invoice("Emile", 42.50, "01/01")
+
+# -------- Return Statements --------
+# return = statement used to end a function
+#          and send a result back to the caller
+
+#def add (x, y):
+#    z = x + y
+#    return z # -------- This will return "3" because x(1) plus y(2) =3. Z is the end result of the function so it will return the result --------
+
+#def subtract (x, y):
+#    z = x - y
+#    return z # -------- This will return "-1" because x(1) minus y(2) =3. Z is the end result of the function so it will return the result --------
+
+#def multiply (x, y):
+#    z = x * y
+#    return z # -------- This will return "2" because x(1) times y(2) =3. Z is the end result of the function so it will return the result --------
+
+#def divide (x, y):
+#    z = x / y
+#    return z # -------- This will return "0.5" because x(1) divided y(2) =3. Z is the end result of the function so it will return the result --------
+
+#print(add(1, 2))
+#print(subtract(1, 2))
+#print(multiply(1, 2))
+#print(divide(1, 2))
+
+#def create_name(first, last):
+#    first = first.capitalize()
+#    last = last.capitalize()
+#    return first + " " + last
+
+#full_name = create_name("emile", "cayer")
+
+#print(full_name)
+
+# -------- Default Arguments --------
+# default arguments = A default value for certain parameters
+#                     default is used when that argument is omitted
+#                     make your functions more flexible, reduces # of arguments
+#                     1. positional, 2. DEFAULT, 3. keyword, 4. arbitrary # -------- These are the types of arguments. We just used positional previously, now we are going to go over default --------
+
+#def net_price(list_price, discount=0, tax=0.05): # -------- The default is set within the parameter(s) here. The default discount is 0 and the default tax is 0.05
+#    return list_price * (1-discount) * (1 + tax)                                 #This function can also accept up to 2 additional arguments --------
+
+#print(net_price(500))
+#print(net_price(500, 0.1)) # -------- If you're passing in an argument for the discount the function will use whatever is passed in rather than the default --------
+#print(net_price(500, 0.1, 0)) # -------- If you're passing in an argument for the discount and the tax the function will use the passed through argument rather than the default --------
+
+# -------- Exercise: Count Up Timer --------
+
+#import time
+
+#def count(end, start=0): # -------- Non-default arguments should follow default arguments so if you use any default arguments you'll want to be sure that their after any positional arguments  --------
+#    for x in range(start,end+1):
+#        print(x)
+#        time.sleep(1)
+#    print("DONE!")
+
+#count(10) # -------- Non-default arguments should follow default arguments so if you use any default arguments you'll want to be sure that their after any positional arguments  --------
+
+#import time
+
+#def count(end, start=0):
+#    for x in range(start, end + 1):
+#        print(x)
+#        time.sleep(1)
+#    print("DONE!")
+
+
+#count(30, 15)
+
+# -------- Keyword Arguments --------
+#          helps with readability
+#          order of arguments doesn't matter
+#          1. positional 2. default 3. KEYWORD 4. arbitrary
+
+#def hello(greeting, title, first, last):
+#    print(f"{greeting} {title}{first} {last}")
+
+#hello("Hello", "Mr.","Emile", "Cayer") # -------- This is a positional argument --------
+
+#hello("Hello", last="Cayer", first="Emile", title="Mr.",) # -------- This is a keyword argument. The order does not matter as long as the parameters match --------
+                                                                  # -------- If mixing positional and keyword arguments, positional must come before keyword arguments --------
+
+#for x in range(1,11):
+#    print(x, end=" ") # -------- "end" is a keyword argument found within the print function --------
+
+#print("1","2","3","4","5", sep="-") # -------- can use the "sep" keyword argument to separate each of the strings with a given character --------
+
+# -------- Exercise: Function to create a phone number --------
+
+#def get_phone(country_code, area, first, last):
+#    return f"{country_code}-{area}-{first}-{last}"
+
+#phone_num = get_phone(country_code="1", area="123", first="456", last="7890")
+#print(phone_num)
+
+# -------- Arbitrary Arguments ( a varying amount of arguments) --------
+# *args    = allows you to pass multiple non-key arguments
+# **kwargs = allows you to pass multiple keyword-arguments
+#            * unpacking operator
+#            1. positional 2. default. 3. keyword 4. ARBITRARY
+
