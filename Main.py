@@ -369,12 +369,12 @@
 #phone_number = input("Enter your phone #: ")
 
 #result = len(name) # -------- this (len) will give you the length of a string --------
-#result = name.find("o") # -------- this will find the amount of the entered character starting from first occurance of the given characters. will return "-1" if not occurances are found  --------
-#result = name.rfind("o") # -------- this will find the amount of the entered character starting from last occurance of the given characters will return "-1" if not occurances are found --------
-#name = name.capitalize() # -------- this will capatalize the first letter of the string --------
+#result = name.find("o") # -------- this will find the amount of the entered character starting from first occurrence of the given characters. will return "-1" if not occurrences are found  --------
+#result = name.rfind("o") # -------- this will find the amount of the entered character starting from last occurrence of the given characters will return "-1" if not occurrences are found --------
+#name = name.capitalize() # -------- this will capitalize the first letter of the string --------
 #name = name.upper() # -------- this will make all the characters uppercase --------
 #name = name.lower() # -------- this will make all the characters lowercase --------
-#result = name.isdigit() # -------- this will return a true or false if the string contains only digits ( can not include alphabetical characrters. has to be only digits.)--------
+#result = name.isdigit() # -------- this will return a true or false if the string contains only digits ( can not include alphabetical characters. has to be only digits.)--------
 #result = name.isalpha() # -------- this will return a true or false if the string contains only alphabetical characters (space is not an alphabetical character)--------
 #result = phone_number.count("-") # -------- this will count how many characters are within the string ("-") used in this example for a phone number. --------
 #phone_number = phone_number.replace("-", " ") # -------- this will replace one character with another within the string --------
