@@ -76,7 +76,7 @@
 #          Returns the entered data as a string
 
 #name = input("What is your name?: ")
-#To make it cleaner use age = int(input("How old are you?: ")) This typescripts the string variable to an integer, making it so the +1 mathematic works.
+#To make it cleaner use age = int(input("How old are you?: ")) This typescripts the string variable to an integer, making it so the +1 mathematics works.
 #age = input("How old are you?: ")
 #age = int(age)
 #age = age +1
@@ -103,7 +103,7 @@
 #print(f"You have bought {quantity} {item}s")
 #print(f"Your total is ${total}")
 
-# -------Madlibs game--------
+# -------Mad-libs game--------
 
 #adjective1 = input("Enter an adjective (description): ")
 #noun1 = input("Enter a noun (person, place, thing): ")
@@ -564,8 +564,8 @@
 
 # -------- Python Countdown Timer Program --------
 
-import time
-from distutils import version
+#import time
+#from distutils import version
 
 #my_time = int(input("Enter the time in seconds: "))
 
@@ -650,11 +650,13 @@ from distutils import version
 #   Set = {} unordered and immutable, but Add/Remove OK. NO duplicates
 #   Tuple = () ordered and unchangeable. Duplicates OK. FASTER
 
+# -------- Lists --------
+
 #fruits = ["apple", "orange", "banana", "coconut"] # -------- This is a list --------
-# print(dir(fruits))
-# print(help(fruits))
-# print(len(fruits))
-# print("pineapple" in fruits)
+# print(dir(fruits)) # -------- use the dir function to show all of the different attributes and methods --------
+# print(help(fruits)) # -------- use the help function to show in depth descriptions of all of the methods --------
+# print(len(fruits)) # -------- use this to show the length --------
+# print("pineapple" in fruits) # -------- use the in operator to find if a value is found within --------
 
 #fruits[0] = "pineapple"
 # print(fruits[0])
@@ -1215,11 +1217,3 @@ from distutils import version
 # **kwargs = allows you to pass multiple keyword-arguments
 #            * unpacking operator
 #            1. positional 2. default. 3. keyword 4. ARBITRARY
-
-def add(*args):
-    total = 0
-    for arg in args:
-        total += arg
-    return total
-
-print(add(1))
