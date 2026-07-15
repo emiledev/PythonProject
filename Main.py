@@ -1217,3 +1217,295 @@
 # **kwargs = allows you to pass multiple keyword-arguments
 #            * unpacking operator
 #            1. positional 2. default. 3. keyword 4. ARBITRARY
+
+# -------- *args --------
+
+#def add(a, b):
+#    return a + b
+
+#print(add(1, 2, 3)) # -------- This will give an error because the add function only takes 2 positional arguments --------
+
+#def add(*args):
+#    total = 0
+#    for arg in args:
+#        total += arg
+#    return total
+
+#print(add(1,2,3,4,5))
+
+#def add(*nums): # -------- The name of the operator is not as important as using the unpacking operator (*) so instead of args you can use something like nums --------
+#    total = 0
+#    for num in nums:
+#        total += num
+#    return total
+
+#print(add(1,2,3,4,5))
+
+#def display_name(*args):
+#    for arg in args:
+#        print(arg, end=" ")
+
+#display_name("Mr.", "Emile", "E", "Cayer", "III")
+
+# -------- **kwargs --------
+
+#def print_address(**kwargs):
+#    for value in kwargs.values(): # -------- To list the values use the .values method --------
+#        print(value)
+
+#print_address(street="1234 Fake St.", city="Detroit", state="MI", zip="54321")
+
+#def print_address(**kwargs):
+#    for key in kwargs.keys(): # -------- To list the keys use the .keys method --------
+#        print(key)
+
+#print_address(street="1234 Fake St.", city="Detroit", state="MI", zip="54321")
+
+#def print_address(**kwargs):
+#    for key, value in kwargs.items(): # -------- To list both the keys and the values use the .items method --------
+#        print(f"{key}: {value}")
+
+#print_address(street="1234 Fake St.", city="Detroit", state="MI", zip="54321")
+
+# -------- Exercise: Print a shipping label --------
+
+#def shipping_label(*args, **kwargs): # -------- This function is designed to accept both args and kwargs. However, args needs to come before kwargs --------
+#    for arg in args:
+#        print(arg, end=" ")
+#    print()
+#    for value in kwargs.values():
+#        print(value, end=" ")
+
+#shipping_label("Mr.", "Emile", "Cayer", "III", # -------- These are arbitrary positional arguments --------
+#               street="123 Fake St.", # -------- These are arbitrary keyword arguments --------
+#               apt="100",
+#               city="Detroit",
+#               state="MI",
+#               zip_code="54321")
+
+#def shipping_label(*args, **kwargs):
+#    for arg in args:
+#        print(arg, end=" ")
+#    print()
+
+#    print(f"{kwargs.get('street')} {kwargs.get('apt')}") # -------- Use single quotes so that python doesn't get confused on where the f-string ends --------
+#    print(f"{kwargs.get('city')} {kwargs.get('state')}, {kwargs.get('zip_code')}")
+
+#shipping_label("Mr.", "Emile", "Cayer", "III",
+#               street="123 Fake St.",
+#               apt="#100",
+#               city="Detroit",
+#               state="MI",
+#               zip_code="54321")
+
+#def shipping_label(*args, **kwargs):
+#    for arg in args:
+#        print(arg, end=" ")
+#    print()
+
+#    print(f"{kwargs.get('street')} {kwargs.get('apt')}") # -------- if this has a parameter that doesn't have anything, it will display "None" --------
+#    print(f"{kwargs.get('city')} {kwargs.get('state')}, {kwargs.get('zip_code')}")
+
+#shipping_label("Mr.", "Emile", "Cayer", "III",
+#               street="123 Fake St.",
+#               city="Detroit",
+#               state="MI",
+#               zip_code="54321")
+
+#def shipping_label(*args, **kwargs):
+#    for arg in args:
+#        print(arg, end=" ")
+#    print()
+
+#    if "apt" in kwargs:
+#        print(f"{kwargs.get('street')} {kwargs.get('apt')}") # -------- You can use an if else statement to make sure "None" does not get printed if there is no apt parameter --------
+#    else:
+#        print(f"{kwargs.get('street')}")
+              
+#    print(f"{kwargs.get('city')} {kwargs.get('state')} {kwargs.get('zip_code')}")
+
+#shipping_label("Mr.", "Emile", "Cayer", "III",
+#               street="123 Fake St.",
+#               pobox="PO box #1001"
+#               city="Detroit",
+#               state="MI",
+#               zip_code="54321")
+
+#def shipping_label(*args, **kwargs):
+#    for arg in args:
+#        print(arg, end=" ")
+#    print()
+
+#    if "apt" in kwargs:
+#        print(f"{kwargs.get('street')} {kwargs.get('apt)')}")
+#    elif "pobox" in kwargs: # -------- You can use an elif statement if a PO box is being used instead of an apt # --------
+#        print(f"{kwargs.get('street')}")
+#        print(f"{kwargs.get('pobox')}")
+#    else:
+#        print(f"{kwargs.get('street')}")
+
+#    print(f"{kwargs.get('city')} {kwargs.get('state')} {kwargs.get('zip')}")
+
+#shipping_label("Mr.", "Emile", "Cayer",
+#               street="123 Fake St.",
+#               pobox="PO box #1001",
+#               city="Detroit",
+#               state="MI",
+#               zip="54321")
+
+# -------- Iterables --------
+# Iterables = An object/collection that can return its elements one at a time,
+#             allowing it to be iterated over in a loop
+
+#numbers = [1, 2, 3, 4, 5] # -------- This is a list, lists are considered iterable. This can be used in a for loop --------
+
+#for number in numbers:
+#    print(number)
+
+#for number in reversed(numbers): # -------- using reversed, this will give you the list of numbers backwards --------
+#    print(number)
+
+#for number in numbers:
+#    print(number, end=" ") # -------- by using end and then a space, this places the list of numbers on a horizontal output, all on the same line --------
+
+#numbers = (1,2,3,4,5) # -------- This is a tuple, tuples are also iterable --------
+
+#for number in numbers:
+#    print(number)
+
+#fruits = {"apple", "orange", "banana", "coconut"} # -------- This is a set, sets are not reversible --------
+
+#for fruit in fruits:
+#    print(fruit)
+
+#name = "Emile Cayer" # -------- This is a string --------
+
+#for character in name:
+#    print(character, end=" ")
+
+#my_dictionary = {"A": 1, "B": 2, "C": 3} # -------- This is a dictionary --------
+
+#for key in my_dictionary: # -------- This will print the keys from the dictionary --------
+#    print(key)
+
+#my_dictionary = {"A": 1, "B": 2, "C": 3}
+
+#for value in my_dictionary.values(): # --------- This will print the values from the dictionary --------
+#    print(value)
+
+#my_dictionary = {"A": 1, "B": 2, "C": 3}
+
+#for key, value in my_dictionary.items(): # -------- This will print both the keys and the values from the dictionary --------
+#    print(key, value)
+
+#my_dictionary = {"A": 1, "B": 2, "C": 3}
+
+#for key, value in my_dictionary.items():
+#    print(f"{key} = {value}") # -------- You can reformat the output however you want. This uses an f-string --------
+
+# -------- Membership Operators --------
+# Membership operators = used to test whether a value or variable is found in a sequence
+#                        (string, list, tuple, set, or dictionary)
+#                        1. in
+#                        2. not in
+
+#word = "APPLE" # -------- This is a string --------
+
+#letter = input("Guess a letter in the secret word: ")
+#if letter in word: # -------- The in membership operator will test to see if a value or a variable (letter) is found within a sequence (word). If it is, it returns true, if not it returns false --------
+#    print(f"There is a {letter}")
+#else:
+#    print(f"{letter} was not found")
+
+#word = "APPLE"
+
+#letter = input("Guess a letter in the secret word: ")
+#if letter not in word: # -------- The not in membership operator is the inverse of the in membership operator --------
+#    print(f"{letter} was not found")
+#else:
+#    print(f"There is a {letter}")
+
+#students = {"Emile", "Joe", "Sarah"} # -------- This is a set --------
+
+#student = input("Enter the name of a student: ")
+
+#if student in students:
+#    print(f"{student} is a student")
+#else:
+#    print(f"{student} is not a student")
+
+#students = {"Emile", "Joe", "Sarah"}
+
+#student = input("Enter the name of a student: ")
+
+#if student not in students: # -------- Sets can also be inverse --------
+#    print(f"{student} is not a student")
+#else:
+#    print(f"{student} is a student")
+
+#grades = {"Emile": "A", # -------- This is a dictionary --------
+#          "Joe": "B",
+#          "Sarah": "C",
+#          "Kevin": "D"}
+
+#student = input("Enter the name of a student: ")
+
+#if student in grades:
+#    print(f"{student}'s grade is {grades[student]}") # -------- You can pull keys and values using the in membership operator ---------
+#else:
+#    print(f"{student} was not found")
+
+#email = "myemail@gmail.com" # -------- This is a string --------
+
+#if "@" in email and "." in email: # -------- You can check numerous conditions using the in membership operator--------
+#    print("Valid email")
+#else:
+#    print("Invalid email")
+
+# -------- List Comprehension --------
+# List comprehension = A concise way to create lists in Python
+#                      Compact and easier to read than traditional loops
+#                      [expression for value in iterable if condition]
+
+
+#doubles = [] # -------- This is a traditional loop --------
+#for x in range(1, 11):
+#    doubles.append(x * 2)
+#print(doubles)
+
+#doubles = [expression for value in iterable]
+
+#doubles = [x * 2 for x in range(1,11)] # -------- This is a list comprehension. "for every _ (x) in _ (range) do _ (*2)" --------
+#print(doubles)
+
+#triples = [y * 3 for y in range(1,11)]
+#print(triples)
+
+#squares = [z**2 for z in range(1,11)]
+#print(squares)
+
+#fruits = ["apple", "orange", "banana", "coconut"] # -------- This is a string --------
+#fruits = [fruit.upper() for fruit in fruits] # -------- Using .upper will make fruits uppercase --------
+#print(fruits)
+
+#fruits =[fruit.upper() for fruit in ["apple", "orange", "banana", "coconut"]] # -------- The previous code can be formatted like this as well --------
+#print(fruits)
+
+#fruits = ["apple", "orange", "banana", "coconut"]
+#fruit_chars = [fruit[0] for fruit in fruits] # -------- This will take the first letter (0) of each string and put it into a new list (fruit_chars) --------
+#print(fruit_chars)
+
+#numbers = [1, -2, 3, -4, 5, -6, 8, -7]
+#positive_nums = [num for num in numbers if num >= 0] # -------- This is a condition. Use the if statement to check a condition --------
+#negative_nums = [num for num in numbers if num < 0]
+#even_nums = [num for num in numbers if num % 2 == 0]
+#odd_nums = [num for num in numbers if num % 2 == 1]
+#print(positive_nums)
+#print(negative_nums)
+#print(even_nums)
+#print(odd_nums)
+
+#grades = [85, 42, 79, 90, 56, 61, 30]
+#passing_grades = [grade for grade in grades if grade >= 60]
+
+#print(passing_grades)
