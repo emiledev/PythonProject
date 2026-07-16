@@ -1714,4 +1714,13 @@ if __name__ == "__main__":
 
 # -------- This is where I delete the main.py script --------
 # -------- I restored the file via local history. Instead of deleting I will rename main.py to root.py --------
+# -------- Created script1 Python file and script2 Python file --------
+# -------- Added new run configurations to script1 and script2. Do this by following these steps: --------
+# 1. Click script1 file tab
+# 2. Click run at the top -> Edit Configuration
+# 3. Click + -> Add new Configuration -> click Python -> select script path -> select script1 -> apply (repeat for script2)
+
+# -------- Python Banking Program -------- (Exercise to get used to working with functions)
+
+
 
