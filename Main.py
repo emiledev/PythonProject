@@ -1535,23 +1535,163 @@
 
 #print(day_of_week(1))
 
-def day_of_week(day):
-    match day: # -------- use match and then the corresponding case (day) and then add cases --------
-        case 1:
-            return "It is Sunday"
-        case 2:
-            return "It is Monday"
-        case 3:
-            return "It is Tuesday"
-        case 4:
-            return "It is Wednesday"
-        case 5:
-            return "It is Thursday"
-        case 6:
-            return "It is Friday"
-        case 7:
-            return "It is Saturday"
-        case _: # -------- an _ in a match-case statement is called a wild card. This case functions as the else statement --------
-            return "Not a valid day"
+# -------- This is a match-case statement. An alternative to using numerous 'elif' statements --------
+
+#def day_of_week(day):
+#    match day: # -------- use match and then the corresponding case (day) and then add cases --------
+#        case 1: # -------- The cases must be put into the "block" for the match case (indent properly) --------
+#            return "It is Sunday"
+#        case 2:
+#            return "It is Monday"
+#        case 3:
+#            return "It is Tuesday"
+#        case 4:
+#            return "It is Wednesday"
+#        case 5:
+#            return "It is Thursday"
+#        case 6:
+#            return "It is Friday"
+#        case 7:
+#            return "It is Saturday"
+#        case _: # -------- an _ in a match-case statement is called a wild card. This case functions as the else statement --------
+#            return "Not a valid day"
+
+#print(day_of_week(1))
+
+#def is_weekend(day):
+#    match day:
+#        case "Sunday": # -------- You can use strings as the match for the case --------
+#            return True # -------- You can return the function as a boolean (True or False) --------
+#        case "Monday":
+#            return False
+#        case "Tuesday":
+#            return False
+#        case "Wednesday":
+#            return False
+#        case "Thursday":
+#            return False
+#        case "Friday":
+#            return False
+#        case 'Saturday':
+#            return True
+#        case _:
+#            return False
+
+#print(is_weekend("Saturday"))
+
+#def is_weekend(day):
+#    match day:
+#        case "Saturday" | "Sunday": # -------- You can use the '|' logical operator. using '|' = or. in this case "Saturday" or (|) "Sunday" --------
+#            return True
+#        case "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday":
+#            return False
+#        case _:
+#            return False
+
+#print(is_weekend("Saturday"))
+
+# -------- Modules --------
+# module = a file containing code you want to include in your program
+#          use 'import' to include a module (built-in or your own)
+#          useful to break up a large program reusable separate files
+
+#print(help("modules")) # -------- Use this to see a list of all of the modules found within the standard Python library --------
+#print(help("math"))
+
+#import math # -------- To import a module use import and then the name of the module. You will then have access to everything found within that module including variables and functions --------
+#math.pi # -------- Use the module name and then . variable or function name to access the variables and functions of the module --------
+#print(math.pi)
+
+#import math as m # -------- Another way you can import a module is by using the 'as' and adding a custom name/an "alias" --------
+#print(m.pi)
+
+#from math import pi # -------- You can also use from to import a specific variable/function from the module. However, this can lead to name conflicts --------
+#print(pi)
+
+# -------- Creating a module --------
+
+# -------- To create a module follow these steps: --------
+# 1. Right click project folder
+# 2. Go to "new" -> Python file
+# 3. Insert name of file
+# 4. Click Python file
+
+#import my_module
+
+#result = my_module.pi
+#result = my_module.square(3)
+#result = my_module.cube(3)
+#result = my_module.circumference(3)
+#result = my_module.area(3)
+
+#print(result)
+
+# -------- Variable Scope & Scope Resolution --------
+# variable scope = where a variable is visible and accessible
+# scope resolution = (LEGB) Local -> Enclosed -> Global -> Built-in
+# scope will always go from Local -> Enclosed -> Global -> Built-in
+
+#def func1(): # -------- This is a function --------
+#    a = 1 # -------- Variables declared within a function have a local scope --------
+#    print(a) # -------- a is the variable. Variable a is local to function 1 --------
+#def func2():
+#    b = 2
+#    print(b) # --------- b is the variable. Variable b is local to function 2 --------
+
+#func1() # -------- This is how to invoke a function --------
+#func2() # -------- This is how to invoke a function --------
+
+# -------- Local scope ---------
+
+#def func1():
+#    a = 1
+#    print(b) # -------- Functions can not see inside other functions. This will return an error because 'b' is not defined inside of function 1 --------
+#def func2():
+#    b = 2
+#    print(a) # -------- Functions can not see inside other functions. This will return an error because 'a' is not defined inside of function 2 --------
+
+#func1()
+#func2()
+
+#def func1():
+#    x = 1
+
+#    def func2():
+#        x = 2 # -------- This is a local version of x. It is local within function 2 ---------
+#        print(x) # -------- Within function 2 if you were to print 'x' it would print the local version which is 2 --------
+#    func2()
+
+#func1()
+
+# -------- Enclosed scope --------
+
+#def func1():
+#    x = 1 # -------- This is an enclosed version of x. It is 'enclosed' within function 1
+
+#    def func2():
+#        print(x) # -------- If you were to remove the 'x = 2' from function 2 then the function would then print '1' which would be using the enclosed function instead of local because x is outside of function 2 --------
+#    func2()
+
+#func1()
+
+# -------- Glocal scope --------
+
+#def func1():
+#    print(x)
+
+#def func2():
+#    print(x)
+
+#x = 3 # -------- This is the global version of x. It is outside of being a local or enclosed version (it is outside any functions) --------
+
+#func1()
+#func2()
+
+# -------- Built-in scope --------
+
+#from math import e # -------- This is the built-in version of e  --------
+
+#def func1():
+#    print(e) # -------- '3' would be printed because the global version comes before the built-in version --------
 
 print(day_of_week(1))
